@@ -1,7 +1,5 @@
 package doubleLinkedList;
 
-import singleLinkedList.HeroNode;
-
 public class DoubleLinkedList {
 	private HeroNode2 head = new HeroNode2(0, "", "");
 
@@ -95,6 +93,42 @@ public class DoubleLinkedList {
 				temp.next.pre = temp.pre;
 			}
 		}
+	}
+	
+	public void addOrder(HeroNode2 heroNode) {
+		HeroNode2 temp = head;
+
+		// if the no already exist
+		boolean flag = false;
+
+		while (true) {
+
+			if (temp.next == null) {
+				break;
+			}
+			if (temp.next.no > heroNode.no) {
+				break;
+			} else if (temp.next.no == heroNode.no) {
+				flag = true;
+				break;
+			}
+			temp = temp.next;
+		}
+
+		if (flag) {
+			System.out.println("This no. already exits.");
+		} else {
+			heroNode.next = temp.next;
+			temp.next = heroNode;
+			heroNode.pre = temp;
+			
+			if (heroNode.next != null) {
+				heroNode.next.pre = heroNode;
+			}
+			
+			
+		}
+
 	}
 
 }

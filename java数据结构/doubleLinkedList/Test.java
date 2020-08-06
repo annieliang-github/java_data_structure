@@ -11,11 +11,11 @@ public class Test {
 		
 		DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
 		
-		doubleLinkedList.add(h1);
-		doubleLinkedList.add(h3);
-		doubleLinkedList.add(h5);
-		doubleLinkedList.add(h2);
-		doubleLinkedList.add(h4);
+		doubleLinkedList.addOrder(h5);
+		doubleLinkedList.addOrder(h1);
+		doubleLinkedList.addOrder(h3);
+		doubleLinkedList.addOrder(h4);
+		doubleLinkedList.addOrder(h2);
 		
 		doubleLinkedList.list();
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -28,6 +28,7 @@ public class Test {
 
 		doubleLinkedList.del(2);
 		doubleLinkedList.list();
+		
 		
 	}
 
