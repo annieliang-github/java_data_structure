@@ -1,14 +1,15 @@
 package stack;
 
+import java.util.List;
 import java.util.Stack;
 
 public class Calculator {
 	
-	public int calRPN(String[] list) {
+	public int calRPN(List<String> parseSuffixExpList) {
 		
         Stack<Integer> stack = new Stack<>();
         
-        for (String str : list) {
+        for (String str : parseSuffixExpList) {
             switch (str){
                 case "+": 
                     stack.push(stack.pop() + stack.pop());
