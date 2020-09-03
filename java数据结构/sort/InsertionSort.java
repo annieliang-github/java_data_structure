@@ -18,7 +18,9 @@ public class InsertionSort {
 				j--;
 			}
 			
-			array[j + 1] = elem; //if bigger, shift to sorted right
+			if (j + 1 != i) {
+				array[j + 1] = elem; //if bigger, shift to sorted right
+			}			
 			
 			/*
 			int insertValue = array[i];

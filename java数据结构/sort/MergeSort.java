@@ -65,6 +65,7 @@ public class MergeSort {
 		}
 		
 		//copy temp to array
+		
 		t = 0; //reset t为0
 		int tempLeft = left;
 		while (tempLeft <= right) {
