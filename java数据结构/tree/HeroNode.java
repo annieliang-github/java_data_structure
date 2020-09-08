@@ -5,7 +5,7 @@ public class HeroNode {
 	private int no;
 	private String nameString;
 	private HeroNode leftHeroNode;
-	private HeroNode riHeroNode;
+	private HeroNode rightHeroNode;
 	
 	public HeroNode(int no, String nameString) {
 		super();
@@ -37,14 +37,21 @@ public class HeroNode {
 		this.leftHeroNode = leftHeroNode;
 	}
 
-	public HeroNode getRiHeroNode() {
-		return riHeroNode;
+	public HeroNode getRightHeroNode() {
+		return rightHeroNode;
 	}
 
-	public void setRiHeroNode(HeroNode riHeroNode) {
-		this.riHeroNode = riHeroNode;
+	public void setRightHeroNode(HeroNode rightHeroNode) {
+		this.rightHeroNode = rightHeroNode;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		return "HeroNode [no=" + no + ", nameString=" + nameString + "]";
+	}
+
 	//前序
 	public void preOrder() {
 		
@@ -54,8 +61,8 @@ public class HeroNode {
 			this.leftHeroNode.preOrder();
 		}
 		
-		if (this.riHeroNode != null) {
-			this.riHeroNode.preOrder();
+		if (this.rightHeroNode != null) {
+			this.rightHeroNode.preOrder();
 		}
 	}
 	
@@ -68,8 +75,8 @@ public class HeroNode {
 		
 		System.out.println(this);
 		
-		if (this.riHeroNode != null) {
-			this.riHeroNode.preOrder();
+		if (this.rightHeroNode != null) {
+			this.rightHeroNode.infixOrder();
 		}
 	}
 	
@@ -77,11 +84,11 @@ public class HeroNode {
 	public void postOrder() {
 		
 		if (this.leftHeroNode != null) {
-			this.leftHeroNode.preOrder();
+			this.leftHeroNode.postOrder();
 		}
 	
-		if (this.riHeroNode != null) {
-			this.riHeroNode.preOrder();
+		if (this.rightHeroNode != null) {
+			this.rightHeroNode.postOrder();
 		}
 		
 		System.out.println(this);
